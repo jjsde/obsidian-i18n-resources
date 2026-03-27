@@ -1,1 +1,15 @@
-[]
+[
+    {
+        "id": "hKzYN6sYfPfCgPKzXCO5GzwM3dk15xob",
+        "plugin": "shell-path-copy",
+        "language": "zh-cn",
+        "version": "1.17.1",
+        "supported_versions": "1.17.1",
+        "title": "Shell Path Copy",
+        "description": "Shell Path Copy Localization & Tweaks",
+        "hash": "0518b58e0518b58e0518b58e0518b58e",
+        "created_at": "2026-03-27T14:42:51.263Z",
+        "updated_at": "2026-03-27T14:42:51.263Z",
+        "type": "plugin"
+    }
+]
