@@ -1,0 +1,728 @@
+{
+    "schemaVersion": 1,
+    "metadata": {
+        "plugin": "shell-path-copy",
+        "version": "1.0.0",
+        "title": "Shell Path Copy",
+        "description": "Shell Path Copy Localization & Tweaks",
+        "language": "zh-cn",
+        "supportedVersions": "1.17.1",
+        "author": ""
+    },
+    "dict": {
+        "main.js": {
+            "ast": [
+                {
+                    "type": "CallExpression",
+                    "name": "addOption",
+                    "source": "Backticks - `/path with spaces/file.md`",
+                    "target": "复制出来的路径前后会加一对反引号，防止路径里有空格 或特殊字符时出错"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "addOption",
+                    "source": "Single quotes - '/path with spaces/file.md'",
+                    "target": "复制出来的路径前后会加上一对单引号 ' '作用和反引号类似，主要是给代码、命令行里用，防止空格导致识别错误。"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "addOption",
+                    "source": "Double quotes - \"/path with spaces/file.md\"",
+                    "target": "复制出来的路径前后会带上一对双引号 \" \"，主要用于路径里有空格时，避免被系统或软件识别成两段"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "addOption",
+                    "source": "Show Linux/Mac options only",
+                    "target": "仅显示 Linux / Mac 系统的选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "addOption",
+                    "source": "Show Windows options only",
+                    "target": "仅显示 Windows 系统的选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "addOption",
+                    "source": "Show both Windows and Linux/Mac options",
+                    "target": "同时显示 Windows 和 Linux/Mac 的选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "addOption",
+                    "source": "Standard markdown - [filename](path)",
+                    "target": "标准 Markdown 格式 - 文件名"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "addOption",
+                    "source": "Wiki-style - [[filename]]",
+                    "target": "Wiki 链接格式 - 文件名"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "error",
+                    "source": "Shell Path Copy: Failed to copy path:",
+                    "target": "Shell Path Copy: 复制路径失败"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "error",
+                    "source": "Shell Path Copy: Failed to copy absolute path:",
+                    "target": "Shell Path Copy: 复制绝对路径失败"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "error",
+                    "source": "Shell Path Copy: Failed to copy file URL:",
+                    "target": "Shell Path Copy:复制文件 URL 失败"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "error",
+                    "source": "Shell Path Copy: Failed to copy markdown link:",
+                    "target": "Shell Path Copy: 复制 Markdown 链接失败"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "error",
+                    "source": "Shell Path Copy: Failed to copy Obsidian URL:",
+                    "target": "Shell Path Copy: 复制 Obsidian 专用链接失败"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "error",
+                    "source": "Shell Path Copy: Failed to copy filename:",
+                    "target": "Shell Path Copy: 复制文件名失败"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Choose how paths are wrapped when copied to clipboard (useful for paths with spaces)",
+                    "target": "选择复制到剪贴板时，路径用什么符号包裹（对带空格的路径很有用）"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Control which path formats appear in the context menu",
+                    "target": "右键文件时，菜单里显示哪几种复制方式"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Display a notification when a path is copied",
+                    "target": "复制路径时显示通知提示"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Display absolute path copy option in menus (desktop only)",
+                    "target": "在菜单中显示 “复制绝对路径” 选项（仅桌面端）"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Display the file:// URL copy option in menus (desktop only)",
+                    "target": "在菜单中显示 file:// 格式的文件链接复制选项（仅桌面端）"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Display the Obsidian URL copy option in menus",
+                    "target": "在菜单中显示形如 obsidian://open?... 的 Obsidian 专用链接复制选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Display the markdown link copy option in menus",
+                    "target": "在菜单中显示 “复制 Markdown 链接” 选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Choose the format for markdown links",
+                    "target": "选择 Markdown 链接的格式"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Display the copy filename (without extension) option in menus",
+                    "target": "在菜单中显示 仅复制文件名（不含后缀）的选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Display the copy filename (with extension) option in menus",
+                    "target": "在菜单中显示复制带后缀的文件名选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setDesc",
+                    "source": "Use the path wrapping setting above when copying filenames",
+                    "target": "复制文件名时，使用路径包裹符号"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Path wrapping",
+                    "target": "路径包裹符号"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Menu display",
+                    "target": "菜单显示项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Show notifications",
+                    "target": "显示通知"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Path options",
+                    "target": "路径选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Show absolute path option",
+                    "target": "显示绝对路径选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Show file:// URL option",
+                    "target": "显示 file:// URL 选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Link options",
+                    "target": "链接选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Show Obsidian URL option",
+                    "target": "显示 Obsidian URL 选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Show markdown link option",
+                    "target": "显示 Markdown 链接选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Markdown link format",
+                    "target": "Markdown 链接格式"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Filename options",
+                    "target": "文件名选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Show filename option",
+                    "target": "显示文件名选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Show filename with extension option",
+                    "target": "显示带扩展名的文件名选项"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setName",
+                    "source": "Apply path wrapping to filenames",
+                    "target": "对文件名应用路径包裹符号"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setTitle",
+                    "source": "Copy as file:// URL",
+                    "target": "Copy as file:// URL"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setTitle",
+                    "source": "Copy as Obsidian URL",
+                    "target": "Copy as Obsidian URL"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setTitle",
+                    "source": "Copy as Markdown Link",
+                    "target": "Copy as Markdown Link"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setTitle",
+                    "source": "Copy Filename",
+                    "target": "Copy Filename"
+                },
+                {
+                    "type": "CallExpression",
+                    "name": "setTitle",
+                    "source": "Copy Filename with Extension",
+                    "target": "Copy Filename with Extension"
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Error: Clipboard API is not available in this environment.",
+                    "target": "Error: Clipboard API is not available in this environment."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Failed to copy path. See console for details.",
+                    "target": "Failed to copy path. See console for details."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Absolute paths are not available on mobile devices.",
+                    "target": "Absolute paths are not available on mobile devices."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Absolute path copied!",
+                    "target": "Absolute path copied!"
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Failed to copy absolute path. See console for details.",
+                    "target": "Failed to copy absolute path. See console for details."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "File URLs are not available on mobile devices.",
+                    "target": "File URLs are not available on mobile devices."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "File URL copied!",
+                    "target": "File URL copied!"
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Failed to copy file URL. See console for details.",
+                    "target": "Failed to copy file URL. See console for details."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Failed to copy markdown link. See console for details.",
+                    "target": "Failed to copy markdown link. See console for details."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Obsidian URL copied!",
+                    "target": "Obsidian URL copied!"
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Failed to copy Obsidian URL. See console for details.",
+                    "target": "Failed to copy Obsidian URL. See console for details."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Filename copied!",
+                    "target": "Filename copied!"
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Failed to copy filename. See console for details.",
+                    "target": "Failed to copy filename. See console for details."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "No file selected. Open a file or right-click it in the file explorer.",
+                    "target": "No file selected. Open a file or right-click it in the file explorer."
+                },
+                {
+                    "type": "NewExpression",
+                    "name": "Notice",
+                    "source": "Please reload Obsidian for command palette changes to take effect",
+                    "target": "Please reload Obsidian for command palette changes to take effect"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "name",
+                    "source": "Copy as Linux/Mac path",
+                    "target": "Copy as Linux/Mac path"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "name",
+                    "source": "Copy as Windows path",
+                    "target": "Copy as Windows path"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "name",
+                    "source": "Copy as file:// URL",
+                    "target": "Copy as file:// URL"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "name",
+                    "source": "Copy as Obsidian URL",
+                    "target": "Copy as Obsidian URL"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "name",
+                    "source": "Copy as markdown link",
+                    "target": "Copy as markdown link"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "name",
+                    "source": "Copy filename",
+                    "target": "Copy filename"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "name",
+                    "source": "Copy filename with extension",
+                    "target": "Copy filename with extension"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "text",
+                    "source": "Path format examples:",
+                    "target": "Path format examples:"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "text",
+                    "source": "• File URL: file:///C:/Users/name/vault/folder/file.md (Windows) or file:///home/user/vault/folder/file.md (Linux/Mac)",
+                    "target": "• File URL: file:///C:/Users/name/vault/folder/file.md (Windows) or file:///home/user/vault/folder/file.md (Linux/Mac)"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "text",
+                    "source": "• Obsidian URL: obsidian://open?vault=MyVault&file=folder/file",
+                    "target": "• Obsidian URL: obsidian://open?vault=MyVault&file=folder/file"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "text",
+                    "source": "• Markdown Link: [[filename]] (wiki-style) or [filename.md](./path/filename.md) (standard)",
+                    "target": "• Markdown Link: [[filename]] (wiki-style) or [filename.md](./path/filename.md) (standard)"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "text",
+                    "source": "• Filename: file (without extension) or file.md (with extension)",
+                    "target": "• Filename: file (without extension) or file.md (with extension)"
+                },
+                {
+                    "type": "ObjectProperty",
+                    "name": "text",
+                    "source": " | ",
+                    "target": " | "
+                }
+            ],
+            "regex": [
+                {
+                    "source": "setTitle(`Copy Absolute ${l} Path`)",
+                    "target": "setTitle(`Copy Absolute ${l} Path`)"
+                },
+                {
+                    "source": "setTitle(\"Copy as file:// URL\")",
+                    "target": "setTitle(\"Copy as file:// URL\")"
+                },
+                {
+                    "source": "setTitle(\"Copy as Obsidian URL\")",
+                    "target": "setTitle(\"Copy as Obsidian URL\")"
+                },
+                {
+                    "source": "setTitle(\"Copy as Markdown Link\")",
+                    "target": "setTitle(\"Copy as Markdown Link\")"
+                },
+                {
+                    "source": "setTitle(\"Copy Filename\")",
+                    "target": "setTitle(\"Copy Filename\")"
+                },
+                {
+                    "source": "setTitle(\"Copy Filename with Extension\")",
+                    "target": "setTitle(\"Copy Filename with Extension\")"
+                },
+                {
+                    "source": "Notice(`${r} path copied!`)",
+                    "target": "Notice(`${r} path copied!`)"
+                },
+                {
+                    "source": "Notice(\"Error: Clipboard API is not available in this environment.\")",
+                    "target": "Notice(\"Error: Clipboard API is not available in this environment.\")"
+                },
+                {
+                    "source": "error(\"Shell Path Copy: Failed to copy path:\",o),new i.Notice(\"Failed to copy path. See console for details.\")",
+                    "target": "error(\"Shell Path Copy: Failed to copy path:\",o),new i.Notice(\"Failed to copy path. See console for details.\")"
+                },
+                {
+                    "source": "Notice(\"Absolute paths are not available on mobile devices.\")",
+                    "target": "Notice(\"Absolute paths are not available on mobile devices.\")"
+                },
+                {
+                    "source": "Notice(\"Absolute path copied!\")",
+                    "target": "Notice(\"Absolute path copied!\")"
+                },
+                {
+                    "source": "error(\"Shell Path Copy: Failed to copy absolute path:\",e),new i.Notice(\"Failed to copy absolute path. See console for details.\")",
+                    "target": "error(\"Shell Path Copy: Failed to copy absolute path:\",e),new i.Notice(\"Failed to copy absolute path. See console for details.\")"
+                },
+                {
+                    "source": "Notice(\"File URLs are not available on mobile devices.\")",
+                    "target": "Notice(\"File URLs are not available on mobile devices.\")"
+                },
+                {
+                    "source": "Notice(\"File URL copied!\")",
+                    "target": "Notice(\"File URL copied!\")"
+                },
+                {
+                    "source": "error(\"Shell Path Copy: Failed to copy file URL:\",e),new i.Notice(\"Failed to copy file URL. See console for details.\")",
+                    "target": "error(\"Shell Path Copy: Failed to copy file URL:\",e),new i.Notice(\"Failed to copy file URL. See console for details.\")"
+                },
+                {
+                    "source": "Notice(`${o} copied!`)",
+                    "target": "Notice(`${o} copied!`)"
+                },
+                {
+                    "source": "error(\"Shell Path Copy: Failed to copy markdown link:\",e),new i.Notice(\"Failed to copy markdown link. See console for details.\")",
+                    "target": "error(\"Shell Path Copy: Failed to copy markdown link:\",e),new i.Notice(\"Failed to copy markdown link. See console for details.\")"
+                },
+                {
+                    "source": "Notice(\"Obsidian URL copied!\")",
+                    "target": "Notice(\"Obsidian URL copied!\")"
+                },
+                {
+                    "source": "error(\"Shell Path Copy: Failed to copy Obsidian URL:\",e),new i.Notice(\"Failed to copy Obsidian URL. See console for details.\")",
+                    "target": "error(\"Shell Path Copy: Failed to copy Obsidian URL:\",e),new i.Notice(\"Failed to copy Obsidian URL. See console for details.\")"
+                },
+                {
+                    "source": "Notice(\"Filename copied!\")",
+                    "target": "Notice(\"Filename copied!\")"
+                },
+                {
+                    "source": "error(\"Shell Path Copy: Failed to copy filename:\",o),new i.Notice(\"Failed to copy filename. See console for details.\")",
+                    "target": "error(\"Shell Path Copy: Failed to copy filename:\",o),new i.Notice(\"Failed to copy filename. See console for details.\")"
+                },
+                {
+                    "source": "Notice(\"No file selected. Open a file or right-click it in the file explorer.\")",
+                    "target": "Notice(\"No file selected. Open a file or right-click it in the file explorer.\")"
+                },
+                {
+                    "source": "setName(\"Path wrapping\")",
+                    "target": "setName(\"Path wrapping\")"
+                },
+                {
+                    "source": "setDesc(\"Choose how paths are wrapped when copied to clipboard (useful for paths with spaces)\")",
+                    "target": "setDesc(\"Choose how paths are wrapped when copied to clipboard (useful for paths with spaces)\")"
+                },
+                {
+                    "source": "setName(\"Menu display\")",
+                    "target": "setName(\"Menu display\")"
+                },
+                {
+                    "source": "setDesc(\"Control which path formats appear in the context menu\")",
+                    "target": "setDesc(\"Control which path formats appear in the context menu\")"
+                },
+                {
+                    "source": "Notice(\"Please reload Obsidian for command palette changes to take effect\")",
+                    "target": "Notice(\"Please reload Obsidian for command palette changes to take effect\")"
+                },
+                {
+                    "source": "setName(\"Show notifications\")",
+                    "target": "setName(\"Show notifications\")"
+                },
+                {
+                    "source": "setDesc(\"Display a notification when a path is copied\")",
+                    "target": "setDesc(\"Display a notification when a path is copied\")"
+                },
+                {
+                    "source": "setName(\"Path options\")",
+                    "target": "setName(\"Path options\")"
+                },
+                {
+                    "source": "setName(\"Show absolute path option\")",
+                    "target": "setName(\"Show absolute path option\")"
+                },
+                {
+                    "source": "setDesc(\"Display absolute path copy option in menus (desktop only)\")",
+                    "target": "setDesc(\"Display absolute path copy option in menus (desktop only)\")"
+                },
+                {
+                    "source": "setName(\"Show file:// URL option\")",
+                    "target": "setName(\"Show file:// URL option\")"
+                },
+                {
+                    "source": "setDesc(\"Display the file:// URL copy option in menus (desktop only)\")",
+                    "target": "setDesc(\"Display the file:// URL copy option in menus (desktop only)\")"
+                },
+                {
+                    "source": "setName(\"Link options\")",
+                    "target": "setName(\"Link options\")"
+                },
+                {
+                    "source": "setName(\"Show Obsidian URL option\")",
+                    "target": "setName(\"Show Obsidian URL option\")"
+                },
+                {
+                    "source": "setDesc(\"Display the Obsidian URL copy option in menus\")",
+                    "target": "setDesc(\"Display the Obsidian URL copy option in menus\")"
+                },
+                {
+                    "source": "setName(\"Show markdown link option\")",
+                    "target": "setName(\"Show markdown link option\")"
+                },
+                {
+                    "source": "setDesc(\"Display the markdown link copy option in menus\")",
+                    "target": "setDesc(\"Display the markdown link copy option in menus\")"
+                },
+                {
+                    "source": "setName(\"Markdown link format\")",
+                    "target": "setName(\"Markdown link format\")"
+                },
+                {
+                    "source": "setDesc(\"Choose the format for markdown links\")",
+                    "target": "setDesc(\"Choose the format for markdown links\")"
+                },
+                {
+                    "source": "setName(\"Filename options\")",
+                    "target": "setName(\"Filename options\")"
+                },
+                {
+                    "source": "setName(\"Show filename option\")",
+                    "target": "setName(\"Show filename option\")"
+                },
+                {
+                    "source": "setDesc(\"Display the copy filename (without extension) option in menus\")",
+                    "target": "setDesc(\"Display the copy filename (without extension) option in menus\")"
+                },
+                {
+                    "source": "setName(\"Show filename with extension option\")",
+                    "target": "setName(\"Show filename with extension option\")"
+                },
+                {
+                    "source": "setDesc(\"Display the copy filename (with extension) option in menus\")",
+                    "target": "setDesc(\"Display the copy filename (with extension) option in menus\")"
+                },
+                {
+                    "source": "setName(\"Apply path wrapping to filenames\")",
+                    "target": "setName(\"Apply path wrapping to filenames\")"
+                },
+                {
+                    "source": "setDesc(\"Use the path wrapping setting above when copying filenames\")",
+                    "target": "setDesc(\"Use the path wrapping setting above when copying filenames\")"
+                },
+                {
+                    "source": "name:\"Copy as Linux/Mac path\"",
+                    "target": "name:\"Copy as Linux/Mac path\""
+                },
+                {
+                    "source": "name:\"Copy as Windows path\"",
+                    "target": "name:\"Copy as Windows path\""
+                },
+                {
+                    "source": "name:`Copy as absolute ${r} path`",
+                    "target": "name:`Copy as absolute ${r} path`"
+                },
+                {
+                    "source": "name:\"Copy as file:// URL\"",
+                    "target": "name:\"Copy as file:// URL\""
+                },
+                {
+                    "source": "name:\"Copy as Obsidian URL\"",
+                    "target": "name:\"Copy as Obsidian URL\""
+                },
+                {
+                    "source": "name:\"Copy as markdown link\"",
+                    "target": "name:\"Copy as markdown link\""
+                },
+                {
+                    "source": "name:\"Copy filename\"",
+                    "target": "name:\"Copy filename\""
+                },
+                {
+                    "source": "name:\"Copy filename with extension\"",
+                    "target": "name:\"Copy filename with extension\""
+                },
+                {
+                    "source": "link:\",e),new i.Notice(\"",
+                    "target": "link:\",e),new i.Notice(\""
+                },
+                {
+                    "source": "name:\",o),new i.Notice(\"",
+                    "target": "name:\",o),new i.Notice(\""
+                },
+                {
+                    "source": "text:\"Path format examples:\"",
+                    "target": "text:\"Path format examples:\""
+                },
+                {
+                    "source": "text:\"\\u2022 Relative Linux/Mac: ./folder/subfolder/file.md\"",
+                    "target": "text:\"\\u2022 Relative Linux/Mac: ./folder/subfolder/file.md\""
+                },
+                {
+                    "source": "text:\"\\u2022 Relative Windows: .\\\\folder\\\\subfolder\\\\file.md\"",
+                    "target": "text:\"\\u2022 Relative Windows: .\\\\folder\\\\subfolder\\\\file.md\""
+                },
+                {
+                    "source": "text:\"\\u2022 Absolute Windows: C:\\\\Users\\\\name\\\\vault\\\\folder\\\\file.md\"",
+                    "target": "text:\"\\u2022 Absolute Windows: C:\\\\Users\\\\name\\\\vault\\\\folder\\\\file.md\""
+                },
+                {
+                    "source": "text:\"\\u2022 Absolute Linux/Mac: /home/user/vault/folder/file.md\"",
+                    "target": "text:\"\\u2022 Absolute Linux/Mac: /home/user/vault/folder/file.md\""
+                },
+                {
+                    "source": "text:\"\\u2022 File URL: file:///C:/Users/name/vault/folder/file.md (Windows) or file:///home/user/vault/folder/file.md (Linux/Mac)\"",
+                    "target": "text:\"\\u2022 File URL: file:///C:/Users/name/vault/folder/file.md (Windows) or file:///home/user/vault/folder/file.md (Linux/Mac)\""
+                },
+                {
+                    "source": "text:\"\\u2022 Obsidian URL: obsidian://open?vault=MyVault&file=folder/file\"",
+                    "target": "text:\"\\u2022 Obsidian URL: obsidian://open?vault=MyVault&file=folder/file\""
+                },
+                {
+                    "source": "text:\"\\u2022 Markdown Link: [[filename]] (wiki-style) or [filename.md](./path/filename.md) (standard)\"",
+                    "target": "text:\"\\u2022 Markdown Link: [[filename]] (wiki-style) or [filename.md](./path/filename.md) (standard)\""
+                },
+                {
+                    "source": "text:\"\\u2022 Filename: file (without extension) or file.md (with extension)\"",
+                    "target": "text:\"\\u2022 Filename: file (without extension) or file.md (with extension)\""
+                },
+                {
+                    "source": "text:`Version ${s} | `",
+                    "target": "text:`Version ${s} | `"
+                },
+                {
+                    "source": "text:\" | \"",
+                    "target": "text:\" | \""
+                }
+            ]
+        }
+    }
+}
